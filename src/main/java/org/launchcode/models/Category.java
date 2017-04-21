@@ -7,21 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by LaunchCode
+ * Created by iesheagoree on 4/20/17.
  */
 @Entity
-public class Cheese {
-
+public class Category {
     @Id
     @GeneratedValue
     private int id;
 
-
     @NotNull
     @Size(min=3, max=15)
     private String name;
+}
 
-    // join column tells it which column in cheese column are part of this list
     @OneToMany
     @JoinColumn(name = "category_id")
     private List<Cheese> cheeses = new ArrayList<>();
