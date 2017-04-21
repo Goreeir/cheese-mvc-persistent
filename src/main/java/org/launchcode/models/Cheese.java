@@ -12,29 +12,37 @@ import java.util.List;
 @Entity
 public class Cheese {
 
+
     @Id
     @GeneratedValue
     private int id;
-
 
     @NotNull
     @Size(min=3, max=15)
     private String name;
 
-    // join column tells it which column in cheese column are part of this list
-    @OneToMany
-    @JoinColumn(name = "category_id")
-    private List<Cheese> cheeses = new ArrayList<>();
+    @NotNull
+    @Size(min=1, message = "Description must not be empty")
+    private String description;
 
-    public Category() {}
 
-    public Category(String name) {
+    @ManyToOne
+    private Category category;
+
+    @ManyToMany(mappedBy = "cheeses")
+    private List<Menu> menus;
+
+    public Cheese(String name, String description) {
         this.name = name;
+        this.description = description;
     }
+
+    public Cheese() { }
 
     public int getId() {
         return id;
     }
+
     public String getName() {
         return name;
     }
@@ -43,7 +51,20 @@ public class Cheese {
         this.name = name;
     }
 
-    public List<Cheese> getCheeses() {
-        return cheeses;
+    public String getDescription() {
+        return description;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+}
 }
