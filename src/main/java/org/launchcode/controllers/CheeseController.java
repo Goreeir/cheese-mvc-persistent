@@ -82,11 +82,9 @@ public class CheeseController {
         return "redirect:";
     }
 
-    // this lists all cheeses with all categories id matches with request param
-    // href in cat/index.html
     @RequestMapping(value = "category", method=RequestMethod.GET)
     public String category(Model model, @RequestParam int id) {
-        // hybernate will populate all the cheeses in the list under id cat
+
 
         Category cat = categoryDao.findOne(id);
         List<Cheese> cheeses = cat.getCheeses();
