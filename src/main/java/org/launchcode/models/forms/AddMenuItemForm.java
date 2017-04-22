@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  */
 public class AddMenuItemForm {
 
-    // pieces of data passed on menuId cheeseId
+
     @NotNull
     private int menuId;
 
@@ -19,16 +19,15 @@ public class AddMenuItemForm {
 
     private Menu menu;
 
-    // options of cheeses to add to menu for user to pick
+
     private Iterable<Cheese> cheeses;
 
-    // default constructor for model to work
     public AddMenuItemForm(){}
 
     public AddMenuItemForm(Iterable<Cheese> cheeses, Menu menu){
 
-    this.cheeses = cheeses;
-    this.menu = menu;
+        this.cheeses = cheeses;
+        this.menu = menu;
     }
     public int getMenuId() {return menuId;}
 
@@ -40,8 +39,6 @@ public class AddMenuItemForm {
 
     public Iterable<Cheese> getCheeses() { return  cheeses;}
 
-//    public void setCheeses(Iterable<Cheese> cheeses) {
-//        this.cheeses = cheeses;
-//    }
     public Menu getMenu() { return menu;}
 }
+
