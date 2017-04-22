@@ -67,4 +67,3 @@ public class Cheese {
         this.category = category;
     }
 }
-}

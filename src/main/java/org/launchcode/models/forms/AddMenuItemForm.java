@@ -5,6 +5,9 @@ import org.launchcode.models.Menu;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Created by iesheagoree on 4/21/2017.
+ */
 public class AddMenuItemForm {
 
     // pieces of data passed on menuId cheeseId
@@ -22,7 +25,7 @@ public class AddMenuItemForm {
     // default constructor for model to work
     public AddMenuItemForm(){}
 
-    public AddMenuItemForm(Iterable<Cheese> cheeses, Menu menu)
+    public AddMenuItemForm(Iterable<Cheese> cheeses, Menu menu){
 
     this.cheeses = cheeses;
     this.menu = menu;

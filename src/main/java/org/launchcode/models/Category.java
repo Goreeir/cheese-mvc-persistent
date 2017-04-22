@@ -18,7 +18,7 @@ public class Category {
     @NotNull
     @Size(min=3, max=15)
     private String name;
-}
+
 
     @OneToMany
     @JoinColumn(name = "category_id")
